@@ -1,3 +1,17 @@
 body {
     margin: 0;
+    background: linear-gradient(90deg, #004BDC 1%, #3973B7 100%);
+}
+
+.headerText {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
 }
