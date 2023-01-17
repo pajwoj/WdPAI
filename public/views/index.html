@@ -1,29 +1,36 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Train Lookup</title>
+    <title>Register</title>
 </head>
+
 <body>
-    <div class="icon">
-        <img width="512px" height="512px" src="../img/icon.svg">
+    <div class="menu">
+        <div class="menuSection"><a class="fill" href="index.html">search</a></div>
+        <div class="menuSection"><a class="fill" href="register.html">register</a></div>
+        <div class="menuSection"><a class="fill" href="profile.html">profile</a></div>
+        <div class="menuSection"><a class="fill" href="login.html">login / logout</a></div>
     </div>
+
     <div class="container">
-        <div class="headerText">
-            Train Lookup
+        <div class="icon">
+            <img src="../img/icon.svg">
         </div>
 
-        <div class="bigBox">
+        <div class="loginContainer">
+            <div class="headerText">
+                Train Lookup
+            </div>
+
             <form class="search">
-                From <input name="from" type="text" placeholder="Kraków Główny"><br>
-                To <input name="to" type="text" placeholder="Warszawa Centralna"><br>
-                Departure date<input name="date" type="date" value="05.12.2022" onfocus="(this.type='date')" onblur="(this.type='text')"><br>
-                Departure time<input name="time" type="time" value="12:12"><br>
+                <input name="from" type="text" placeholder="From: Kraków Główny">
+                <input name="to" type="text" placeholder="To: Warszawa Centralna">
+                <input name="date" type="date" value="05.12.2022" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <input name="time" type="time" value="12:12">
+
                 <button>submit</button>
             </form>
-        </div>
-
-        <div class="suggestionText">
             <a href="register.html">Don't have an account? Register!</a>
         </div>
-    </div>
 </body>
