@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <title>Register</title>
 </head>
 
 <body>
     <div class="menu">
-        <div class="menuSection"><a class="fill" href="index.html">search</a></div>
-        <div class="menuSection"><a class="fill" href="register.html">register</a></div>
-        <div class="menuSection"><a class="fill" href="profile.html">profile</a></div>
-        <div class="menuSection"><a class="fill" href="login.html">login / logout</a></div>
+        <div class="menuSection"><a class="fill" href="index">search</a></div>
+        <div class="menuSection"><a class="fill" href="register">register</a></div>
+        <div class="menuSection"><a class="fill" href="profile">profile</a></div>
+        <div class="menuSection"><a class="fill" href="login">login / logout</a></div>
     </div>
 
     <div class="container">
         <div class="icon">
-            <img src="../img/icon.svg">
+            <img src="public/img/icon.svg">
         </div>
 
         <div class="loginContainer">
@@ -29,7 +29,7 @@
                 <button>register</button>
             </form>
 
-            <a href="login.html">Already have an account? Log in!</a>
+            <a href="login">Already have an account? Log in!</a>
         </div>
     </div>
 </body>
