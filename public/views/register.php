@@ -6,12 +6,7 @@
 </head>
 
 <body>
-    <div class="menu">
-        <div class="menuSection"><a class="fill" href="index">search</a></div>
-        <div class="menuSection"><a class="fill" href="register">register</a></div>
-        <div class="menuSection"><a class="fill" href="profile">profile</a></div>
-        <div class="menuSection"><a class="fill" href="login">login / logout</a></div>
-    </div>
+    <?php include "menu.php"; ?>
 
     <div class="container">
         <div class="icon">
