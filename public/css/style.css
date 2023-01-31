@@ -143,6 +143,10 @@ a.fill {
     color: white;
 }
 
+.messages {
+    color: black;
+}
+
 @media only screen and (max-device-width: 420px) {
     body {
     font-size: 4vw;

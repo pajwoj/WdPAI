@@ -18,11 +18,21 @@
                 Train Lookup
             </div>
 
-            <form class="register">
+            <form class="register" action="register" method="post">
                 <input name="email" type="text" placeholder="john@doe.com">
                 <input name="password" type="password" placeholder="password">
                 <button>register</button>
             </form>
+
+            <div class="messages">
+                <?php
+                if(isset($messages)){
+                    foreach($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
 
             <a href="login">Already have an account? Log in!</a>
         </div>
