@@ -21,6 +21,7 @@
             <form class="register" action="register" method="post">
                 <input name="email" type="text" placeholder="john@doe.com">
                 <input name="password" type="password" placeholder="password">
+                <input name="passwordConfirm" type="password" placeholder="confirm password">
                 <button>register</button>
             </form>
 

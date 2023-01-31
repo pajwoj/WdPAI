@@ -21,7 +21,7 @@ class SecurityController extends AppController {
         }
 
         $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $password = $_POST['password'];
 
         $user = $this->userRepository->getUser($email);
 
@@ -33,8 +33,12 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['No user with email: ' + $email]]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
+        }
+
+        else {
+            return $this->render('login', ['messages' => ['Login successful!']]);
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
@@ -49,11 +53,23 @@ class SecurityController extends AppController {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $passwordConfirm = $_POST['passwordConfirm'];
 
+        $user = $this->userRepository->getUser($email);
+
+        if ($user) {
+            return $this->render('register', ['messages' => ['An user with this email already exists.']]);
+        }
+
+        if ($password !== $passwordConfirm) {
+            return $this->render('register', ['messages' => ['Passwords do not match.']]);
+        }
+
+        else {
         $user = new User($email, password_hash($password, PASSWORD_BCRYPT));
-
         $this->userRepository->addUser($user);
+        return $this->render('register', ['messages' => ['Registration successful, you can log in.']]);
+        }
 
-        return $this->render('login', ['messages' => ['Registration succesful, you can log in.']]);
     }
 }

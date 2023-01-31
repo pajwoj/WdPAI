@@ -49,6 +49,21 @@ form {
     background-color: white;
 }
 
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 65%;
+    height: 30%;
+    margin: 2%;
+    padding: 1%;
+
+    border-radius: 33px;
+    background-color: white;
+}
+
 a:link {
     color: yellow;
 }
