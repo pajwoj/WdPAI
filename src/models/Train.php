@@ -1,18 +1,50 @@
 <?php
 
 class Train {
-    private $station;
-    private $hour;
+    private $stationsId;
+    private $hoursId;
     private $name;
 
     public function __construct(
-        string $station,
-        string $hour,
+        string $stationsId,
+        string $hoursId,
         string $name
     ) {
-        $this->start = $station;
-        $this->starthour = $hour;
+        $this->stationsId = $stationsId;
+        $this->hoursId = $hoursId;
         $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStationsId(): string
+    {
+        return $this->stationsId;
+    }
+
+    /**
+     * @param string $stationsId
+     */
+    public function setStationsId(string $stationsId): void
+    {
+        $this->stationsId = $stationsId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHoursId(): string
+    {
+        return $this->hoursId;
+    }
+
+    /**
+     * @param string $hoursId
+     */
+    public function setHoursId(string $hoursId): void
+    {
+        $this->hoursId = $hoursId;
     }
 
     /**
@@ -29,37 +61,5 @@ class Train {
     public function setName(string $name): void
     {
         $this->name = $name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHour()
-    {
-        return $this->hour;
-    }
-
-    /**
-     * @param mixed $hour
-     */
-    public function setHour($hour): void
-    {
-        $this->hour = $hour;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStation()
-    {
-        return $this->station;
-    }
-
-    /**
-     * @param mixed $station
-     */
-    public function setStation($station): void
-    {
-        $this->station = $station;
     }
 }
