@@ -1,6 +1,6 @@
 <?php
 
-class Train {
+class Station {
     private $name;
 
     public function __construct(
