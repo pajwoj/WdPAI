@@ -61,6 +61,14 @@ class SecurityController extends AppController {
             return $this->render('register', ['messages' => ['An user with this email already exists.']]);
         }
 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return $this->render('register', ['messages' => ['Wrong email format.']]);
+        }
+
+        if (strlen($password) <= 4) {
+            return $this->render('register', ['messages' => ['Password is too short (minimum 5 characters).']]);
+        }
+
         if ($password !== $passwordConfirm) {
             return $this->render('register', ['messages' => ['Passwords do not match.']]);
         }

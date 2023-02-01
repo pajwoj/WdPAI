@@ -12,5 +12,7 @@ Router::get('profile', 'DefaultController');
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
+Router::get('search', 'SearchController');
+Router::get('stationSearchAPI', 'SearchController');
 
 Router::run($path);

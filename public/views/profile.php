@@ -16,11 +16,13 @@
     <div class="loginContainer">
         todo profile
 
+        <form action="search" method="get"><button>AAAAA</button></form>
         <div class="messages">
             <?php
             if(isset($messages)){
-                foreach($messages as $message) {
-                    echo $message;
+                foreach ($messages as $message) {
+                    print(current($message));
+                    print(', ');
                 }
             }
             ?>
