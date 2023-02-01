@@ -162,6 +162,12 @@ a.fill {
     color: black;
 }
 
+.notValid {
+    border: 2px solid red;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
 @media only screen and (max-device-width: 420px) {
     body {
     font-size: 4vw;
