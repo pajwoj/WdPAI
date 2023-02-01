@@ -12,6 +12,11 @@ input {
 }
 
 button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     height: 25%;
     width: 40%;
     margin: 1%;
@@ -166,6 +171,17 @@ a.fill {
     border: 2px solid red;
     box-shadow: 0 0 0.2em red;
     outline: none;
+}
+
+.autocomplete-items div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.autocomplete-items div:hover {
+    background-color: lightgrey;
+    color: red;
 }
 
 @media only screen and (max-device-width: 420px) {

@@ -18,13 +18,13 @@
                 Train Lookup
             </div>
 
-            <form class="search">
-                <input name="from" type="text" placeholder="From: Kraków Główny">
-                <input name="to" type="text" placeholder="To: Warszawa Centralna">
-                <input name="date" type="date" value="05.12.2022" onfocus="(this.type='date')" onblur="(this.type='text')">
-                <input name="time" type="time" value="12:12">
+            <form action="results" class="search" autocomplete="off" method="get">
+                <input id="from" name="searchQuery" type="text" placeholder="From: Kraków Główny">
+                <input id="to" name="searchQuery" type="text" placeholder="To: Warszawa Centralna">
+                <input id="date" name="date" type="date" value="05.12.2022" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <input id="time" name="time" type="time" value="12:12">
 
-                <button>submit</button>
+                <button id="submit">submit</button>
             </form>
 
             <div class="messages">
@@ -39,4 +39,6 @@
 
             <a href="register">Don't have an account? Register!</a>
         </div>
+
+        <script type="text/javascript" src="./public/js/search.js"></script>
 </body>

@@ -5,7 +5,7 @@ require_once __DIR__ . '/../models/Station.php';
 
 class StationRepository extends Repository {
 
-    public function getAllTrainStationNames(): ?array {
+    public function getAllTrainStationNames(): array {
         $result = [];
 
         $stmt = $this->database->connect()->prepare('

@@ -14,18 +14,8 @@
     </div>
 
     <div class="loginContainer">
-        todo profile
-
-        <form action="search" method="get"><button>AAAAA</button></form>
-        <div class="messages">
-            <?php
-            if(isset($messages)){
-                foreach ($messages as $message) {
-                    print(current($message));
-                    print(', ');
-                }
-            }
-            ?>
-        </div>
+        Current user:
     </div>
+
+    <script type="text/javascript" src="./public/js/profile.js"></script>
 </body>
