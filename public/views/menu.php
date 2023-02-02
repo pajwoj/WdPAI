@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/menu.css">
 </head>
 
 <body>

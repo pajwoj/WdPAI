@@ -27,6 +27,10 @@ class UserRepository extends Repository
         );
     }
 
+    public function getCurrentUser(): ?string {
+        return $_SESSION['user'];
+    }
+
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('

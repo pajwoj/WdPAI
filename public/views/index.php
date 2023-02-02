@@ -2,6 +2,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="public/css/search.css">
     <title>Register</title>
 </head>
 
@@ -13,7 +15,7 @@
             <img src="public/img/icon.svg">
         </div>
 
-        <div class="loginContainer">
+        <div class="formContainer">
             <div class="headerText">
                 Train Lookup
             </div>
@@ -21,7 +23,6 @@
             <form action="results" class="search" autocomplete="off" method="get">
                 <input id="from" name="searchQuery" type="text" placeholder="From: Kraków Główny">
                 <input id="to" name="searchQuery" type="text" placeholder="To: Warszawa Centralna">
-                <input id="date" name="date" type="date" value="05.12.2022" onfocus="(this.type='date')" onblur="(this.type='text')">
                 <input id="time" name="time" type="time" value="12:12">
 
                 <button id="submit">submit</button>

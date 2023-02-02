@@ -1,0 +1,20 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 65%;
+    height: 30%;
+    margin: 2%;
+    padding: 1%;
+
+    border-radius: 33px;
+    background-color: white;
+}
+
+.notValid {
+    border: 2px solid red;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}

@@ -17,6 +17,12 @@ class SecurityController extends AppController {
     public function login()
     {
         if (!$this->isPost()) {
+            if(isset($_SESSION['user'])) {
+                session_unset();
+                session_destroy();
+                return $this->render('login', ['messages' => ['Logged out succesfully!']]);
+            }
+
             return $this->render('login');
         }
 
@@ -29,20 +35,13 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['User not found!']]);
         }
 
-        if ($user->getEmail() !== $email) {
-            return $this->render('login', ['messages' => ['No user with email: ' + $email]]);
-        }
-
         if (!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
-        else {
-            return $this->render('login', ['messages' => ['Login successful!']]);
-        }
-
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/index");
+        session_start();
+        $_SESSION['user'] = $email;
+        return $this->render('login', ['messages' => ['Login successful!']]);
     }
 
     public function register()
@@ -78,6 +77,5 @@ class SecurityController extends AppController {
         $this->userRepository->addUser($user);
         return $this->render('register', ['messages' => ['Registration successful, you can log in.']]);
         }
-
     }
 }

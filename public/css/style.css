@@ -39,101 +39,6 @@ form {
     background-color: white;
 }
 
-.search {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 65%;
-    height: 40%;
-    margin: 2%;
-    padding: 1%;
-
-    border-radius: 33px;
-    background-color: white;
-}
-
-.register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 65%;
-    height: 30%;
-    margin: 2%;
-    padding: 1%;
-
-    border-radius: 33px;
-    background-color: white;
-}
-
-a:link {
-    color: yellow;
-}
-
-a:visited {
-    color: yellow;
-}
-
-a:hover {
-    color: red;
-}
-
-a:active {
-    color: red;
-}
-
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    width: 100vw;
-    height: 5vh;
-
-    background-color: red;
-}
-
-.menuSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    width: 25%;
-    height: 90%;
-    background-color: #004BDC;
-    margin: 1px 0 1px 1px;
-    border: 1px solid black;
-}
-
-a.fill {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-}
-
-.loginContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 50%;
-    height: 75%;
-}
-
 .container {
     background: linear-gradient(90deg, #004BDC 0%, #3973B7 100%);
     width: 100vw;
@@ -143,6 +48,16 @@ a.fill {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 75%;
 }
 
 .icon {
@@ -167,23 +82,6 @@ a.fill {
     color: black;
 }
 
-.notValid {
-    border: 2px solid red;
-    box-shadow: 0 0 0.2em red;
-    outline: none;
-}
-
-.autocomplete-items div {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.autocomplete-items div:hover {
-    background-color: lightgrey;
-    color: red;
-}
-
 @media only screen and (max-device-width: 420px) {
     body {
     font-size: 4vw;
@@ -205,13 +103,13 @@ a.fill {
         flex-direction: column;
     }
 
+    .formContainer {
+        width: 100%;
+        height: 70%;
+    }
+
     .icon {
         width: 75%;
         height: 30%;
-    }
-
-    .loginContainer {
-        width: 100%;
-        height: 70%;
     }
 }

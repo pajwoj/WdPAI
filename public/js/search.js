@@ -2,7 +2,6 @@ function autocomplete(inp) {
     var currentFocus;
     inp.addEventListener("input", async function (e) {
 
-        document.getElementById("date").style.display = "none";
         document.getElementById("time").style.display = "none";
         document.getElementById("submit").style.display = "none";
 
@@ -60,7 +59,6 @@ function autocomplete(inp) {
     }
 
     document.addEventListener("click", function (e) {
-        document.getElementById("date").style.display = "flex";
         document.getElementById("time").style.display = "flex";
         document.getElementById("submit").style.display = "flex";
         document.getElementById("submit").style.alignItems = "center";

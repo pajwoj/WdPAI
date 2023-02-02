@@ -2,6 +2,8 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="public/css/results.css">
     <title>Register</title>
 </head>
 
@@ -13,7 +15,7 @@
         <img src="public/img/icon.svg">
     </div>
 
-    <div class="loginContainer">
+    <div class="formContainer">
         <div class="headerText">
             Train Lookup
         </div>

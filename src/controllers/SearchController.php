@@ -13,11 +13,6 @@ class SearchController extends AppController
         $this->stationRepository = new StationRepository();
     }
 
-    public function search()
-    {
-        return $this->render('profile', ['messages' => $this->stationRepository->getAllTrainStationNames()]);
-    }
-
     public function StationSearchAPI()
     {
         $input = strtolower($_GET['searchQuery']);

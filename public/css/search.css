@@ -1,0 +1,26 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 65%;
+    height: 30%;
+    margin: 2%;
+    padding: 1%;
+
+    border-radius: 33px;
+    background-color: white;
+}
+
+.autocomplete-items div {
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.autocomplete-items div:hover {
+    background-color: lightgrey;
+    color: red;
+}
