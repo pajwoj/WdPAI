@@ -1,50 +1,34 @@
 <?php
 
 class Route {
-    private $stationId;
-    private $hourId;
+    private $station;
+    private $trainId;
     private $time;
 
     public function __construct(
-        int $stationId,
-        int $hourId,
+        string $station,
+        int $trainId,
         string $time
     ) {
-        $this->stationId = $stationId;
-        $this->hourId = $hourId;
+        $this->station = $station;
+        $this->trainId = $trainId;
         $this->time = $time;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getStationId(): int
+    public function getStation(): string
     {
-        return $this->stationId;
+        return $this->station;
     }
 
     /**
-     * @param int $stationId
+     * @param string $station
      */
-    public function setStationId(int $stationId): void
+    public function setStation(string $station): void
     {
-        $this->stationId = $stationId;
-    }
-
-    /**
-     * @return int
-     */
-    public function getHourId(): int
-    {
-        return $this->hourId;
-    }
-
-    /**
-     * @param int $hourId
-     */
-    public function setHourId(int $hourId): void
-    {
-        $this->hourId = $hourId;
+        $this->station = $station;
     }
 
     /**
@@ -61,5 +45,21 @@ class Route {
     public function setTime(string $time): void
     {
         $this->time = $time;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTrainId(): int
+    {
+        return $this->trainId;
+    }
+
+    /**
+     * @param int $trainId
+     */
+    public function setTrainId(int $trainId): void
+    {
+        $this->trainId = $trainId;
     }
 }
