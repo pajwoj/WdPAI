@@ -4,12 +4,19 @@ function autocomplete(inp) {
 
         document.getElementById("time").style.display = "none";
         document.getElementById("submit").style.display = "none";
+        var response;
 
-        if((inp.getAttribute('id')) == "from") document.getElementById("to").style.display = "none";
-        else if((inp.getAttribute('id')) == "to") document.getElementById("from").style.display = "none";
+        if((inp.getAttribute('id')) == "from") {
+            document.getElementById("to").style.display = "none";
+            let urlencoded = (new URLSearchParams({start: inp.value})).toString();
+            response = await fetch('StartStationSearchAPI' + "?" + urlencoded, {});
+        }
 
-        let urlencoded = (new URLSearchParams({searchQuery: inp.value})).toString();
-        const response = await fetch('StationSearchAPI' + "?" + urlencoded, {});
+        if((inp.getAttribute('id')) == "to") {
+            document.getElementById("from").style.display = "none";
+            let urlencoded = (new URLSearchParams({end: inp.value})).toString();
+            response = await fetch('EndStationSearchAPI' + "?" + urlencoded, {});
+        }
 
         array = Array.from(await response.json())
 
@@ -75,11 +82,11 @@ window.array = []
 let inputFrom = document.getElementById("from");
 let inputTo = document.getElementById("to");
 
-inputFrom.addEventListener('input', () => getFormData('StationSearchAPI', {searchQuery: inputFrom.value}));
-inputFrom.addEventListener('propertychange', () => getFormData('StationSearchAPI', {searchQuery: inputFrom.value}));
+inputFrom.addEventListener('input', () => getFormData('StartStationSearchAPI', {start: inputFrom.value}));
+inputFrom.addEventListener('propertychange', () => getFormData('StartStationSearchAPI', {start: inputFrom.value}));
 
-inputTo.addEventListener('input', () => getFormData('StationSearchAPI', {searchQuery: inputTo.value}));
-inputTo.addEventListener('propertychange', () => getFormData('StationSearchAPI', {searchQuery: inputTo.value}));
+inputTo.addEventListener('input', () => getFormData('EndStationSearchAPI', {end: inputTo.value}));
+inputTo.addEventListener('propertychange', () => getFormData('EndStationSearchAPI', {end: inputTo.value}));
 
 async function getFormData(url = '', data) {
     let urlencoded = (new URLSearchParams(data)).toString();

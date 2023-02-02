@@ -21,8 +21,8 @@
             </div>
 
             <form action="results" class="search" autocomplete="off" method="get">
-                <input id="from" name="searchQuery" type="text" placeholder="From: Kraków Główny">
-                <input id="to" name="searchQuery" type="text" placeholder="To: Warszawa Centralna">
+                <input id="from" name="start" type="text" placeholder="From: Kraków Główny">
+                <input id="to" name="end" type="text" placeholder="To: Warszawa Centralna">
                 <input id="time" name="time" type="time" value="12:12">
 
                 <button id="submit">submit</button>

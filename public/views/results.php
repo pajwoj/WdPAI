@@ -19,14 +19,17 @@
         <div class="headerText">
             Train Lookup
         </div>
-
-        RESULTS PAGE abcd
-
         <div class="messages">
             <?php
-            if(isset($messages)){
-                foreach($messages as $message) {
-                    echo $message;
+            if(isset($results)){
+                print($results[0]." -> ".$results[1].", ".$results[2]);
+
+                echo("<br>");
+
+                $trains = $results[3];
+                foreach ($trains as $train) {
+                    print($train);
+                    echo("<br>");
                 }
             }
             ?>
