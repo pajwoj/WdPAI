@@ -22,14 +22,26 @@
         <div class="messages">
             <?php
             if(isset($results)){
+
+                if($results[0] == '' || $results[1] == '' || $results[2] == '') {
+                    print("Invalid search query, try again.");
+                    return;
+                }
+
                 print($results[0]." -> ".$results[1].", ".$results[2]);
 
-                echo("<br>");
+                if(sizeof($results[3]) > 0) {
+                    echo("<br><br>Found trains: <br>");
 
-                $trains = $results[3];
-                foreach ($trains as $train) {
-                    print($train);
-                    echo("<br>");
+                    $trains = $results[3];
+                    foreach ($trains as $train) {
+                        print($train);
+                        echo("<br>");
+                    }
+                }
+
+                else {
+                    echo("<br><br>No matching trains found.");
                 }
             }
             ?>

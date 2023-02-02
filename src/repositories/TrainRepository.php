@@ -41,6 +41,34 @@ class TrainRepository extends Repository {
         return $result;
     }
 
+    public function areStopsInCorrectOrder($start, $end, $name): ?bool {
+        $routes = $this->getTrainRoute($this->getTrainIdByName($name));
+        $startFlag = false;
+
+        foreach($routes as $stop) {
+            if($stop->getStation() == $start) $startFlag = true;
+            if($stop->getStation() == $end && !$startFlag) return false;
+            if($stop->getStation() == $end && $startFlag) return true;
+        }
+
+        return false;
+    }
+
+    public function isTrainOnTime($start, $hour, $name): ?bool {
+        $routes = $this->getTrainRoute($this->getTrainIdByName($name));
+
+        $hour .= ":00";
+
+        foreach($routes as $stop) {
+            if($stop->getStation() == $start) {
+                if(strtotime($stop->getTime()) < strtotime($hour)) return false;
+                if(strtotime($stop->getTime()) >= strtotime($hour)) return true;
+            }
+        }
+
+        return false;
+    }
+
     public function getTrainNamesByStartEndStops($start, $end): ?array {
         $result = [];
 
@@ -75,5 +103,21 @@ class TrainRepository extends Repository {
         }
 
         return array_unique($result);
+    }
+
+    public function getCorrectTrains($start, $end, $hour): ?array {
+        $trains = $this->getTrainNamesByStartEndStops($start, $end);
+        $correctOrder = [];
+
+        foreach($trains as $train) {
+            if($this->areStopsInCorrectOrder($start, $end, $train)) $correctOrder[] = $train;
+        }
+
+        $correct = [];
+        foreach($correctOrder as $train) {
+            if($this->isTrainOnTime($start, $hour, $train)) $correct[] = $train;
+        }
+
+        return $correct;
     }
 }

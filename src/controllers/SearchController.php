@@ -67,7 +67,7 @@ class SearchController extends AppController
         $end = $_GET['end'];
         $hour = $_GET['time'];
 
-        $trains = $this->trainRepository->getTrainNamesByStartEndStops($start, $end);
+        $trains = $this->trainRepository->getCorrectTrains($start, $end, $hour);
 
         return $this->render('results', ['results' => [$start, $end, $hour, $trains]]);
     }
