@@ -1,0 +1,44 @@
+.listBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 75%;
+    height: 100%;
+    margin: 2%;
+    padding: 1%;
+
+    overflow: auto;
+
+    border-radius: 33px;
+    background-color: white;
+}
+
+td {
+    justify-content: center;
+    align-items: center;
+
+    padding: 1%;
+
+    border-bottom: 1px solid black;
+}
+
+.time {
+    text-align: right;
+    width: 20%;
+
+}
+
+.station {
+    text-align: left;
+    width: 80%;
+}
+
+.headerTime {
+    text-align: right;
+}
+
+.headerStation {
+    text-align: left;
+}

@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/menu.css">
+    <link rel="stylesheet" type="text/css" href="public/css/login.css">
     <title>Login</title>
 </head>
 

@@ -62,6 +62,28 @@ class SearchController extends AppController
         print json_encode($result);
     }
 
+    public function TrainSearchAPI() {
+        $input = strtolower($_GET['train']);
+        $result = [];
+        $data = $this->trainRepository->getAllTrainNames();
+
+        if ($input == '') {
+            foreach ($data as $current) $result[] = $current;
+            print json_encode($result);
+            return;
+        }
+
+        else {
+            foreach ($data as $current) {
+                if (strpos(strtolower($current), $input) !== false) {
+                    $result[] = $current;
+                }
+            }
+        }
+
+        print json_encode($result);
+    }
+
     public function results() {
         $start = $_GET['start'];
         $end = $_GET['end'];
@@ -70,5 +92,18 @@ class SearchController extends AppController
         $trains = $this->trainRepository->getCorrectTrains($start, $end, $hour);
 
         return $this->render('results', ['results' => [$start, $end, $hour, $trains]]);
+    }
+
+    public function trainresults() {
+        $train = $_GET['train'];
+
+        if(@$this->trainRepository->getTrainIdByName($train) == NULL) {
+            return $this->render('results', ['results' => ['']]);
+        }
+
+        else {
+            $route = $this->trainRepository->getTrainRoute($this->trainRepository->getTrainIdByName($train));
+            return $this->render('trainresults', ['results' => [$route]]);
+        }
     }
 }

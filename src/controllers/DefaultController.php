@@ -9,8 +9,8 @@ class DefaultController extends AppController {
         $this->render('index');
     }
 
-    public function results()
+    public function trains()
     {
-        $this->render('results');
+        $this->render('trains');
     }
 }

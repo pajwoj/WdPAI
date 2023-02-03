@@ -120,4 +120,21 @@ class TrainRepository extends Repository {
 
         return $correct;
     }
+
+    public function getAllTrainNames(): ?array {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            select trains.name from trains;
+        ');
+        $stmt->execute();
+
+        $current = $stmt->fetch(PDO::FETCH_ASSOC);
+        while($current) {
+            $result[] = $current['name'];
+            $current = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $result;
+    }
 }
