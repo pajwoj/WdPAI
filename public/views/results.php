@@ -49,7 +49,7 @@
                         echo $url;
 
                         print($train);
-                        
+
                         echo("</a>");
                         echo("<br>");
                     }
