@@ -35,7 +35,22 @@
 
                     $trains = $results[3];
                     foreach ($trains as $train) {
+                        $urlIterator = 0;
+                        $url = '<a href=trainresults?train=';
+
+                        $splitTrain = explode(' ', $train);
+                        foreach($splitTrain as $trainURLPart) {
+                            $url .= $trainURLPart;
+                            if($urlIterator == sizeof($splitTrain) - 1) break;
+                            else $url .= '+';
+                            $urlIterator++;
+                        }
+                        $url .= ">";
+                        echo $url;
+
                         print($train);
+                        
+                        echo("</a>");
                         echo("<br>");
                     }
                 }
